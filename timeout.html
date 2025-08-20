@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <div id="demo"></div>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+    <p>Hiii how are you</p>
+
+</body>
+<script>
+    // console.log(setTimeout(myFunction, 3000));
+    setTimeout(myFunction, 3000);
+    setTimeout(() => {
+        console.log("I am timed out element");
+    }, 3000);
+    console.log("Just after 3 sec");
+    function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello world!!!!!";
+    }
+</script>
+</html>
