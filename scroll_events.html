@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .scroll-container {
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+            overflow: auto;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .scroll-area {
+            width: 250px;
+            height: 120px;
+            border: 1px solid gray;
+            overflow: scroll;
+            margin: 10px 0;
+            padding: 5px;
+        }
+        .content {
+            height: 500px;
+            background: linear-gradient(to bottom, white, lightgray);
+            padding: 10px;
+        }
+        .tall-content {
+            height: 800px;
+            background: linear-gradient(to bottom, lightblue, lightgreen);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scroll Events</h1>
+    <p>Scroll in the containers below and check console</p>
+    
+    <div class="scroll-container" id="container-one">
+        <div class="content">
+            <p>This is scrollable content in container one.</p>
+            <p>Keep scrolling down to see more content.</p>
+            <p>More text here...</p>
+            <p>Continue scrolling...</p>
+            <p>Almost at the bottom...</p>
+            <p>End of content for container one.</p>
+        </div>
+    </div>
+
+    <div class="scroll-area" id="area-two">
+        <div class="tall-content">
+            <p>This is another scrollable area.</p>
+            <p>Scroll down to trigger events.</p>
+            <p>More content to scroll through...</p>
+            <p>Keep going...</p>
+            <p>More text...</p>
+            <p>Final content in area two.</p>
+        </div>
+    </div>
+
+    <script>
+        let containerOne = document.getElementById('container-one')
+        let areaTwo = document.getElementById('area-two')
+
+        containerOne.addEventListener('scroll', containerScroll)
+
+        function containerScroll() {
+            console.log('Container one scrolled')
+        }
+
+        areaTwo.addEventListener('scroll', areaScroll)
+
+        function areaScroll() {
+            console.log('Area two scrolled')
+        }
+
+        window.addEventListener('scroll', windowScroll)
+
+        function windowScroll() {
+            console.log('Page scrolled')
+        }
+    </script>
+</body>
+</html>
