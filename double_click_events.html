@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .item {
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid black;
+            background: white;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .card {
+            width: 150px;
+            height: 80px;
+            border: 1px solid gray;
+            background: lightyellow;
+            margin: 10px;
+            text-align: center;
+            line-height: 80px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Double Click Events</h1>
+    <p>Double click the elements below</p>
+    
+    <div class="item" id="menu-item">Menu Item</div>
+    <div class="card" id="info-card">Info Card</div>
+    <button id="delete-btn">Delete Button</button>
+
+    <script>
+        let menuItem = document.getElementById('menu-item')
+        let infoCard = document.getElementById('info-card')
+        let deleteBtn = document.getElementById('delete-btn')
+
+        menuItem.addEventListener('dblclick', menuDoubleClick)
+
+        function menuDoubleClick() {
+            console.log('Menu item double clicked')
+        }
+
+        infoCard.addEventListener('dblclick', cardDoubleClick)
+
+        function cardDoubleClick() {
+            console.log('Info card double clicked')
+        }
+
+        deleteBtn.addEventListener('dblclick', deleteDoubleClick)
+
+        function deleteDoubleClick() {
+            console.log('Delete button double clicked')
+        }
+    </script>
+</body>
+</html>
