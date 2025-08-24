@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .info-box {
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid gray;
+            background: whitesmoke;
+        }
+        .resizable-div {
+            width: 200px;
+            height: 150px;
+            border: 2px solid black;
+            background: white;
+            resize: both;
+            overflow: auto;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resize Events</h1>
+    <p>Resize your browser </p>
+    
+    <div class="info-box">
+        <p></p>
+    </div>
+
+    <div class="info-box">
+        <p></p>
+    </div>
+
+    <div class="resizable-div" id="resizable-element">
+        <p>This is a resizable div element. You can resize it by dragging the bottom-right corner.</p>
+    </div>
+
+    <script>
+        let resizableElement = document.getElementById('resizable-element')
+
+        window.addEventListener('resize', windowResize)
+
+        function windowResize() {
+            console.log('Window resized to: ' + window.innerWidth + 'x' + window.innerHeight)
+        }
+
+    
+        if (window.ResizeObserver) {
+            let resizeObserver = new ResizeObserver(entries => {
+                for (let entry of entries) {
+                    console.log('Resizable div size changed')
+                }
+            })
+            resizeObserver.observe(resizableElement)
+        }
+    </script>
+</body>
+</html>
