@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .input-box {
+            padding: 8px;
+            margin: 10px;
+            border: 1px solid gray;
+            width: 200px;
+        }
+        .focus-button {
+            padding: 10px 15px;
+            margin: 10px;
+            border: 1px solid black;
+            background: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Focus Events</h1>
+    <p>Click on inputs and buttons to test focus events</p>
+    
+    <input type="text" class="input-box" id="name-input" placeholder="Name field">
+    <input type="email" class="input-box" id="email-input" placeholder="Email field">
+    <input type="text" class="input-box" id="phone-input" placeholder="Phone field">
+    <button class="focus-button" id="save-button">Save Button</button>
+    <button class="focus-button" id="cancel-button">Cancel Button</button>
+
+    <script>
+        let nameInput = document.getElementById('name-input')
+        let emailInput = document.getElementById('email-input')
+        let phoneInput = document.getElementById('phone-input')
+        let saveButton = document.getElementById('save-button')
+        let cancelButton = document.getElementById('cancel-button')
+
+        nameInput.addEventListener('focus', nameFocus)
+        nameInput.addEventListener('focusin', nameFocusIn)
+
+        function nameFocus() {
+            console.log('Name input focused')
+        }
+
+        function nameFocusIn() {
+            console.log('Name input focus in event')
+        }
+
+        emailInput.addEventListener('focus', emailFocus)
+
+        function emailFocus() {
+            console.log('Email input focused')
+        }
+
+        phoneInput.addEventListener('focusout', phoneFocusOut)
+
+        function phoneFocusOut() {
+            console.log('Phone input focus out event')
+        }
+
+        saveButton.addEventListener('focusin', saveFocusIn)
+
+        function saveFocusIn() {
+            console.log('Save button focus in')
+        }
+
+        cancelButton.addEventListener('focusout', cancelFocusOut)
+
+        function cancelFocusOut() {
+            console.log('Cancel button focus out')
+        }
+    </script>
+</body>
+</html>
