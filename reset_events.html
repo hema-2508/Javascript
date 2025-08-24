@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .form-field {
+            display: block;
+            margin: 8px 0;
+            padding: 6px;
+            border: 1px solid gray;
+            width: 200px;
+        }
+        .reset-btn {
+            padding: 8px 16px;
+            margin: 10px 5px;
+            border: 1px solid black;
+            background: white;
+            cursor: pointer;
+        }
+        .form-container {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reset Events</h1>
+    <p>Fill the forms and click reset buttons</p>
+    
+    <div class="form-container">
+        <h3>User Form</h3>
+        <form id="user-form">
+            <input type="text" class="form-field" placeholder="First Name">
+            <input type="text" class="form-field" placeholder="Last Name">
+            <input type="email" class="form-field" placeholder="Email">
+            <button type="reset" class="reset-btn">Clear Form</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h3>Contact Form</h3>
+        <form id="contact-form">
+            <input type="text" class="form-field" placeholder="Company">
+            <input type="tel" class="form-field" placeholder="Phone">
+            <textarea class="form-field" placeholder="Notes"></textarea>
+            <button type="reset" class="reset-btn">Reset Fields</button>
+        </form>
+    </div>
+
+    <script>
+        let userForm = document.getElementById('user-form')
+        let contactForm = document.getElementById('contact-form')
+
+        userForm.addEventListener('reset', userFormReset)
+
+        function userFormReset() {
+            console.log('User form has been reset')
+        }
+
+        contactForm.addEventListener('reset', contactFormReset)
+
+        function contactFormReset() {
+            console.log('Contact form has been reset')
+        }
+    </script>
+</body>
+</html>
