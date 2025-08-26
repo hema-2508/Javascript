@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Registration Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f2f2f2;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px;
+      width: 100%;
+      background: teal;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkcyan;
+    }
+    #message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Registration</h2>
+    <form id="regForm">
+      <input type="text" id="name" placeholder="Enter your name" required><br>
+      <input type="email" id="email" placeholder="Enter your email" required><br>
+      <input type="password" id="password" placeholder="Enter password" required><br>
+      <button type="submit">Register</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <script>
+   
+    const form = document.getElementById('regForm');
+    const message = document.getElementById('message');
+
+ 
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      message.textContent = name + " successfully registered!";
+    });
+  </script>
+
+</body>
+</html>
