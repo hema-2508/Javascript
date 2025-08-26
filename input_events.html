@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .field {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            border: 1px solid gray;
+            width: 250px;
+        }
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Events</h1>
+    <p>Type in the fields below to trigger input events</p>
+    
+    <input type="text" class="field" id="username-field" placeholder="Username">
+    <input type="password" class="field" id="password-field" placeholder="Password">
+    <textarea class="field" id="message-field" placeholder="Message"></textarea>
+    <input type="number" class="field" id="age-field" placeholder="Age">
+
+    <script>
+        let usernameField = document.getElementById('username-field')
+        let passwordField = document.getElementById('password-field')
+        let messageField = document.getElementById('message-field')
+        let ageField = document.getElementById('age-field')
+
+        usernameField.addEventListener('input', usernameInput)
+
+        function usernameInput(e) {
+            console.log('Username input: ' + e.target.value)
+        }
+
+        passwordField.addEventListener('input', passwordInput)
+
+        function passwordInput(e) {
+            console.log('Password field changed')
+        }
+
+        messageField.addEventListener('input', messageInput)
+
+        function messageInput(e) {
+            console.log('Message input: ' + e.target.value)
+        }
+
+        ageField.addEventListener('input', ageInput)
+
+        function ageInput(e) {
+            console.log('Age input: ' + e.target.value)
+        }
+    </script>
+</body>
+</html>
