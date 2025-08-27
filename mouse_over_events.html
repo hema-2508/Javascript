@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Over Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .area {
+            width: 120px;
+            height: 120px;
+            margin: 15px;
+            border: 1px solid black;
+            display: inline-block;
+            text-align: center;
+            line-height: 120px;
+        }
+        .zone-a { background: lightcoral; }
+        .zone-b { background: lightgreen; }
+        .zone-c { background: lightsteelblue; }
+    </style>
+</head>
+<body>
+    <h1>Mouse Over Events</h1>
+    <p>Move your mouse over the areas below</p>
+    
+    <div class="area zone-a" id="area-one">Zone A</div>
+    <div class="area zone-b" id="area-two">Zone B</div>
+    <div class="area zone-c" id="area-three">Zone C</div>
+
+    <script>
+        let areaOne = document.getElementById('area-one')
+        let areaTwo = document.getElementById('area-two')
+        let areaThree = document.getElementById('area-three')
+
+        areaOne.addEventListener('mouseover', areaOneOver)
+
+        function areaOneOver() {
+            console.log('Mouse over zone A')
+        }
+
+        areaTwo.addEventListener('mouseover', areaTwoOver)
+
+        function areaTwoOver() {
+            console.log('Mouse over zone B')
+        }
+
+        areaThree.addEventListener('mouseover', areaThreeOver)
+
+        function areaThreeOver() {
+            console.log('Mouse over zone C')
+        }
+    </script>
+</body>
+</html>
