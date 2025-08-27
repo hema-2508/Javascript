@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .key-button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: 1px solid black;
+            background: white;
+            cursor: pointer;
+        }
+        .text-area {
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            border: 1px solid gray;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Key Events</h1>
+    <p>Click on elements and press keys</p>
+    
+    <button class="key-button" id="down-button" tabindex="0">Key Down Test</button>
+    <button class="key-button" id="up-button" tabindex="0">Key Up Test</button>
+    <button class="key-button" id="press-button" tabindex="0">Key Press Test</button>
+    <textarea class="text-area" id="text-field" placeholder="Type here..."></textarea>
+
+    <script>
+        let downButton = document.getElementById('down-button')
+        let upButton = document.getElementById('up-button')
+        let pressButton = document.getElementById('press-button')
+        let textField = document.getElementById('text-field')
+
+        downButton.addEventListener('keydown', keyDownEvent)
+
+        function keyDownEvent(e) {
+            console.log('Key down: ' + e.key)
+        }
+
+        upButton.addEventListener('keyup', keyUpEvent)
+
+        function keyUpEvent(e) {
+            console.log('Key up: ' + e.key)
+        }
+
+        pressButton.addEventListener('keypress', keyPressEvent)
+
+        function keyPressEvent(e) {
+            console.log('Key press: ' + e.key)
+        }
+
+        textField.addEventListener('keydown', textKeyDown)
+
+        function textKeyDown(e) {
+            console.log('Text area key down: ' + e.key)
+        }
+    </script>
+</body>
+</html>
