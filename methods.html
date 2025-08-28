@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Methods Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .span-tag {
+      background: lightgray;
+      padding: 5px;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    .highlight {
+      color: blue;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    div {
+      margin: 15px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul {
+      margin-top: 20px;
+    }
+
+    li {
+      list-style: circle;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM Selection & Styling Demo</h1>
+
+  
+  <p class="span-tag">Span-tag 1</p>
+  <p class="span-tag highlight">Span-tag 2</p> 
+  <p class="span-tag">Span-tag 3</p>
+
+  
+  <h2>Heading 1</h2>
+  <h2>Heading 2</h2>
+  <h2>Heading 3</h2>
+
+  <div>First div content</div>
+  <div>Second div content</div>
+
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
+
+  <ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ul>
+
+  <script>
+
+
+    const spanElements = document.getElementsByClassName('span-tag');
+
+    spanElements[0].style.background = 'green';
+    spanElements[0].style.color = 'white';
+    
+    const headings = document.getElementsByTagName('h2');
+    
+    headings[1].setAttribute('id', 'mainHeading');
+    headings[1].style.color = 'red';
+    
+
+    const firstDiv = document.querySelector('div');
+    if (firstDiv>1) {
+      firstDiv.style.backgroundColor = 'lightblue';
+      firstDiv.style.padding = '15px';
+      firstDiv.style.border = '3px dashed red';
+    }
+
+    const allButtons = document.querySelectorAll('button');
+
+
+    for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].style.background = 'purple';
+    allButtons[i].style.color = 'white';
+    allButtons[i].style.margin = '5px';
+    }
+
+
+      const ulElement = document.querySelector('ul');
+    const liItems = ulElement.children;
+    
+    for (let i = 0; i < liItems.length; i++) {
+      liItems[i].style.fontWeight = 'bold';
+      liItems[i].style.color = 'green';
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+  </script>
+
+</body>
+</html>
