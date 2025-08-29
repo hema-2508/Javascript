@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Move Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .tracker {
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            border: 2px solid black;
+            background: whitesmoke;
+            text-align: center;
+            line-height: 150px;
+        }
+        .canvas {
+            width: 300px;
+            height: 200px;
+            border: 1px solid gray;
+            background: white;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse Move Events</h1>
+    <p>Move your mouse inside the areas</p>
+    
+    <div class="tracker" id="position-tracker">Position Tracker</div>
+    <div class="canvas" id="move-canvas">Move Canvas</div>
+
+    <script>
+        let positionTracker = document.getElementById('position-tracker')
+        let moveCanvas = document.getElementById('move-canvas')
+
+        positionTracker.addEventListener('mousemove', trackPosition)
+
+        function trackPosition(e) {
+            let x = e.clientX
+            let y = e.clientY
+            console.log('Position - X: ' + x + ', Y: ' + y)
+        }
+
+        moveCanvas.addEventListener('mousemove', canvasMove)
+
+        function canvasMove(e) {
+            console.log('Mouse moving in canvas area')
+        }
+    </script>
+</body>
+</html>
