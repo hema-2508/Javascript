@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Enter/Leave Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            width: 180px;
+            height: 120px;
+            margin: 15px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 120px;
+        }
+        .panel-one { background: lavender; }
+        .panel-two { background: mistyrose; }
+        .panel-three { background: honeydew; }
+    </style>
+</head>
+<body>
+    <h1>Mouse Enter/Leave Events</h1>
+    <p>Move your mouse in and out of the panels</p>
+    
+    <div class="container panel-one" id="panel-a">Panel A</div>
+    <div class="container panel-two" id="panel-b">Panel B</div>
+    <div class="container panel-three" id="panel-c">Panel C</div>
+
+    <script>
+        let panelA = document.getElementById('panel-a')
+        let panelB = document.getElementById('panel-b')
+        let panelC = document.getElementById('panel-c')
+
+        panelA.addEventListener('mouseenter', panelAEnter)
+        panelA.addEventListener('mouseleave', panelALeave)
+
+        function panelAEnter() {
+            console.log('Mouse entered panel A')
+        }
+
+        function panelALeave() {
+            console.log('Mouse left panel A')
+        }
+
+        panelB.addEventListener('mouseenter', panelBEnter)
+        panelB.addEventListener('mouseleave', panelBLeave)
+
+        function panelBEnter() {
+            console.log('Mouse entered panel B')
+        }
+
+        function panelBLeave() {
+            console.log('Mouse left panel B')
+        }
+
+        panelC.addEventListener('mouseenter', panelCEnter)
+        panelC.addEventListener('mouseleave', panelCLeave)
+
+        function panelCEnter() {
+            console.log('Mouse entered panel C')
+        }
+
+        function panelCLeave() {
+            console.log('Mouse left panel C')
+        }
+    </script>
+</body>
+</html>
