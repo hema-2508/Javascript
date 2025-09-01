@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM before/after Demo</title>
+</head>
+<body>
+  <div id="container">
+    <div id="target">Target Element</div>
+  </div>
+
+  <script>
+    const target = document.getElementById('target');
+
+    const beforeElem = document.createElement('p');
+    beforeElem.innerText = 'Inserted BEFORE the target!';
+
+    target.before(beforeElem);
+
+    const afterElem = document.createElement('p');
+    afterElem.innerText = 'Inserted AFTER the target!';
+
+    target.after(afterElem);
+  </script>
+</body>
+</html>
